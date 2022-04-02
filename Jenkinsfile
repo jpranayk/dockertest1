@@ -17,8 +17,7 @@ pipeline {
             steps {
                 script {
                     dockerImage = docker.build registry
-                    //+ ":v$BUILD_NUMBER" 
-                   // sh "docker build -t 9494482991/nginx-deployment:${BUILD_NUMBER} . "
+                    //+ ":v$BUILD_NUMBER"
                 }
             }
         }
