@@ -1,7 +1,7 @@
 pipeline {
     environment {
         registry = '9494482991/nginx'
-        registryCredential = 'dockerhub_id'
+        registryCredential = 'dockerhub'
         dockerSwarmManager = '10.0.1.200:2375'
         dockerhost = '10.0.1.200'
         dockerImage = ''
