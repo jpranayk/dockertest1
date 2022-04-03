@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = '9494482991/pipelinetest'
+        registry = '9494482991/nginx'
         registryCredential = 'dockerhub_id'
         dockerSwarmManager = '10.0.1.200:2375'
         dockerhost = '10.0.1.200'
@@ -37,7 +37,7 @@ pipeline {
         stage('Deploying to Docker Swarm') {
             steps {
                 sh "docker -H tcp://$dockerSwarmManager service rm testing1 || true"
-                sh "docker -H tcp://$dockerSwarmManager service create --name testing1 -p 8100:80 $registry:v$BUILD_NUMBER"
+                sh "docker -H tcp://$dockerSwarmManager service create --name nginx -p 8100:80 $registry:v$BUILD_NUMBER"
             }
         }
         stage('Verifying The Deployment') {
