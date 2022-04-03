@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        registry = '9494482991/ngnix'
+        registry = '9494482991/pipelinetest'
         registryCredential = 'dockerhub_id'
         dockerSwarmManager = '10.0.1.200:2375'
         dockerhost = '10.0.1.200'
