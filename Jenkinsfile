@@ -28,12 +28,7 @@ pipeline {
                     }
                 }
             }
-        }
-        stage('Cleaning up') {
-            steps {
-                sh "docker rmi $registry:v$BUILD_NUMBER"
-            }
-        }
+        }   
         stage('Deploying to Docker Swarm') {
             steps {
                 sh "docker -H tcp://$dockerSwarmManager service rm testing1 || true"
