@@ -1,4 +1,4 @@
-FROM pipelinetest:v1 
+FROM nginx:latest 
 MAINTAINER pranayjangiti8985@gmail.com 
 RUN apt install -y curl
 COPY index.html /usr/share/nginx/html/
